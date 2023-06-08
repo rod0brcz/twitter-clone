@@ -5,9 +5,8 @@ import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
 const savedTweetsData = localStorage.getItem('tweetsData');
 if (savedTweetsData) {
     const parsedTweetsData = JSON.parse(savedTweetsData);
-    tweetsData.length = 0; // Clear the existing tweetsData array
+    tweetsData.length = 0;
 
-    // Add the parsed data to the existing tweetsData array
     parsedTweetsData.forEach(tweet => {
         tweetsData.push(tweet);
     });
@@ -80,7 +79,7 @@ function handleTweetBtnClick() {
 
     if (tweetInput.value.trim()) {
         tweetsData.unshift({
-            handle: `@Scrimba`,
+            handle: `@User`,
             profilePic: `images/scrimbalogo.png`,
             likes: 0,
             retweets: 0,
@@ -107,7 +106,7 @@ function handleUserReply(tweetId) {
 
         if (replyInput.value.trim()) {
             const reply = {
-                handle: `@Scrimba`,
+                handle: `@User`,
                 profilePic: `images/scrimbalogo.png`,
                 tweetText: replyInput.value.trim()
             };
